@@ -49,12 +49,12 @@ export const Navbar: React.FC = () => {
 
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'bg-white/80 dark:bg-space-dark/80 backdrop-blur-md border-b border-purple-500/10 py-3 shadow-lg' : 'bg-transparent py-6'}`}>
-      <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
-        <a href="#" className="flex items-center gap-2 group">
+      <div className="max-w-7xl mx-auto px-4 md:px-6 flex items-center justify-between gap-4">
+        <a href="#" className="flex min-w-0 items-center gap-2 group">
           <span className="w-8 h-8 rounded-full bg-purple-600/20 border border-purple-500/30 flex items-center justify-center text-purple-600 dark:text-purple-300 group-hover:scale-110 transition-transform">
             <Compass className="w-4 h-4" />
           </span>
-          <span className="font-serif font-medium tracking-wide text-sm md:text-base">Sumaiya Orpa</span>
+          <span className="truncate font-serif font-medium tracking-wide text-sm md:text-base">Sumaiya Orpa</span>
         </a>
 
         <div className="hidden md:flex items-center gap-8 text-sm">
@@ -82,10 +82,10 @@ export const Navbar: React.FC = () => {
 
         </div>
 
-        <div className="flex items-center gap-3 md:hidden">
+        <div className="relative z-20 flex shrink-0 items-center gap-2 md:hidden">
           <button 
             onClick={toggleTheme}
-            className="w-8 h-8 rounded-full bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-purple-600 dark:text-purple-300"
+            className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-600 dark:text-purple-300"
             title="Toggle Dark/Light Mode"
             aria-label="Toggle theme"
           >
@@ -94,7 +94,7 @@ export const Navbar: React.FC = () => {
 
           <button 
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="p-1 text-slate-700 dark:text-slate-200"
+            className="flex h-9 w-9 shrink-0 items-center justify-center text-slate-700 dark:text-slate-200"
             aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
           >
             {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -103,7 +103,7 @@ export const Navbar: React.FC = () => {
       </div>
 
       {mobileMenuOpen && (
-        <div className="md:hidden absolute top-full left-0 right-0 bg-white/95 dark:bg-space-secondary/95 backdrop-blur-xl border-b border-purple-500/20 py-6 px-6 flex flex-col gap-4 shadow-2xl">
+        <div className="md:hidden absolute top-full left-0 right-0 z-10 bg-white/95 dark:bg-space-secondary/95 backdrop-blur-xl border-b border-purple-500/20 py-6 px-6 flex flex-col gap-4 shadow-2xl">
           {navLinks.map((link) => (
             <a 
               key={link.name} 
