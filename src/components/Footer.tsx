@@ -1,8 +1,10 @@
-import React from 'react';
-import { Facebook, Instagram, Globe } from 'lucide-react';
+import React, { useState } from 'react';
+import { Facebook, Instagram, Globe, MessageCircle } from 'lucide-react';
 import { personalInfo, socialLinks } from '../data/content';
 
 export const Footer: React.FC = () => {
+  const [showDeveloperInfo, setShowDeveloperInfo] = useState(false);
+
   const getIcon = (iconName: string) => {
     switch (iconName) {
       case 'facebook': return <Facebook className="w-4 h-4" />;
@@ -39,7 +41,41 @@ export const Footer: React.FC = () => {
           </div>
         )}
 
-        <div className="text-xs text-slate-500 pt-6">
+        <button
+          type="button"
+          onClick={() => setShowDeveloperInfo((isVisible) => !isVisible)}
+          className="text-xs text-slate-500 hover:text-slate-700 dark:hover:text-slate-300 transition-colors"
+          aria-expanded={showDeveloperInfo}
+        >
+          Developer info
+        </button>
+
+        {showDeveloperInfo && (
+          <div className="flex items-center gap-3" aria-label="Developer social links">
+            <a
+              href="https://www.facebook.com/monirul.hasan06"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-9 h-9 rounded-full glass-panel hover:bg-purple-900/30 flex items-center justify-center text-slate-600 dark:text-slate-300 hover:text-white border border-purple-500/20 transition-all"
+              title="Developer on Facebook"
+              aria-label="Developer on Facebook"
+            >
+              <Facebook className="w-4 h-4" />
+            </a>
+            <a
+              href="https://wa.me/+8801521796217"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-9 h-9 rounded-full glass-panel hover:bg-purple-900/30 flex items-center justify-center text-slate-600 dark:text-slate-300 hover:text-white border border-purple-500/20 transition-all"
+              title="Developer on WhatsApp"
+              aria-label="Developer on WhatsApp"
+            >
+              <MessageCircle className="w-4 h-4" />
+            </a>
+          </div>
+        )}
+
+        <div className="text-xs text-slate-500">
           © {new Date().getFullYear()} — Just a simple gift.
         </div>
       </div>

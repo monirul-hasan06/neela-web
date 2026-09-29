@@ -63,7 +63,7 @@ export const Navbar: React.FC = () => {
               key={link.name}
               href={link.href}
               className={link.special
-                ? 'inline-flex items-center gap-2 rounded-full border border-pink-400/40 bg-pink-500/15 px-4 py-2 text-purple-700 dark:text-pink-200 shadow-sm shadow-pink-900/10 hover:bg-pink-500/25 hover:scale-[1.03] transition-all'
+                ? 'inline-flex items-center gap-2 rounded-full bg-pink-500/15 px-4 py-2 text-purple-700 dark:text-pink-200 shadow-sm shadow-pink-900/10 hover:bg-pink-500/25 hover:scale-[1.03] transition-all'
                 : 'hover:text-purple-500 dark:hover:text-purple-300 transition-colors'}
             >
               {link.special && <Mail className="w-4 h-4" />}
@@ -110,7 +110,7 @@ export const Navbar: React.FC = () => {
               href={link.href} 
               onClick={() => setMobileMenuOpen(false)}
               className={link.special
-                ? 'inline-flex items-center gap-2 rounded-xl border border-pink-400/40 bg-pink-500/15 px-4 py-3 text-lg font-serif text-purple-700 dark:text-pink-200'
+                ? 'inline-flex items-center gap-2 rounded-xl bg-pink-500/15 px-4 py-3 text-lg font-serif text-purple-700 dark:text-pink-200'
                 : 'text-lg font-serif py-1 border-b border-slate-200 dark:border-slate-800/60'}
             >
               {link.special && <Mail className="w-5 h-5" />}
