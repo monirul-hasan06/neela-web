@@ -47,7 +47,7 @@ export const NeelaSection: React.FC = () => {
           <p className="text-slate-800 dark:text-slate-200">A song simply starts reminding you of someone.</p>
           <div className="pt-4">
             <p className="text-purple-600 dark:text-purple-300 font-serif text-xl">
-              For some reason, Neela made me think of you.
+              For a simple reason, You can think the developer as a friend, Nothing else.
             </p>
           </div>
         </motion.div>

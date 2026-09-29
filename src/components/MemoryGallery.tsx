@@ -14,7 +14,7 @@ const memoryCards: MemoryCard[] = [
   {
     title: "Midnight Melodies",
     tag: "Atmosphere",
-    description: "When the world goes quiet and certain songs just sound different.",
+    description: "When the world goes quiet and certain songs just sound different and Developer thought it's your favourite one",
     icon: <Moon className="w-5 h-5 text-indigo-400" />,
     gradient: "from-indigo-500/10 via-purple-500/5 to-transparent",
   },

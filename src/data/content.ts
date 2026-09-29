@@ -10,7 +10,7 @@ export const personalInfo = {
 };
 
 export const letterContent = {
-  salutation: "Hey Sumaiya,",
+  salutation: "Hey Orpaaa,",
   paragraphs: [
     "I could have just sent you a message.",
     "But that felt a little too ordinary.",

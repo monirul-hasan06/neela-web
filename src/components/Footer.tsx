@@ -19,7 +19,7 @@ export const Footer: React.FC = () => {
         </h3>
         
         <p className="text-slate-500 dark:text-slate-400 text-sm">
-          A little website. A little story. One memorable night.
+          A little website. A little story. Just to view something different if you want developer will update it as you want.
         </p>
 
         {socialLinks.length > 0 && (
@@ -40,7 +40,7 @@ export const Footer: React.FC = () => {
         )}
 
         <div className="text-xs text-slate-500 pt-6">
-          © {new Date().getFullYear()} — Frontend interactive project.
+          © {new Date().getFullYear()} — Just a simple gift.
         </div>
       </div>
     </footer>

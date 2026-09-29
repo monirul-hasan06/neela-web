@@ -42,7 +42,7 @@ export const AboutSection: React.FC = () => {
             Welcome to your little universe.
           </h2>
           <p className="text-slate-500 dark:text-slate-400 text-sm md:text-base">
-            Three things that inspired this website.
+            Main three things in the website let's tour togather.
           </p>
         </motion.div>
 

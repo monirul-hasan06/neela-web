@@ -48,7 +48,7 @@ export const FinalSection: React.FC = () => {
           </p>
 
           <p className="text-slate-500 dark:text-slate-400 text-sm md:text-base">
-            Because that was the whole point.
+            Because that was the point.
           </p>
         </motion.div>
 
@@ -59,7 +59,7 @@ export const FinalSection: React.FC = () => {
           transition={{ duration: 0.8, delay: 0.9 }}
           className="pt-12 border-t border-slate-200 dark:border-slate-800/80 max-w-xs mx-auto text-xs text-slate-500 tracking-wider uppercase font-medium"
         >
-          — Made with a little creativity, a lot of time, and a thought of {personalInfo.name}.
+          Made with a little creativity, with a little effort, and a thought of {personalInfo.name}.
         </motion.div>
       </div>
     </section>

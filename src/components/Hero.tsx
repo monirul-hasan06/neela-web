@@ -18,7 +18,7 @@ export const Hero: React.FC = () => {
       >
         <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-purple-950/20 border border-purple-500/20 text-purple-600 dark:text-purple-300 text-xs md:text-sm tracking-wide mb-6">
           <Heart className="w-3.5 h-3.5 text-pink-500 fill-pink-500/20" />
-          <span>A digital surprise for you</span>
+          <span>A simple surprise for you</span>
         </span>
 
         <h1 className="text-4xl md:text-7xl font-serif font-bold tracking-tight mb-6 leading-tight">
@@ -30,7 +30,7 @@ export const Hero: React.FC = () => {
         </p>
 
         <p className="text-sm md:text-base text-slate-500 dark:text-slate-400 mb-10 max-w-md">
-          Because sometimes a message isn't enough.
+          Because the developer heard from someone that your friends receive lots of gifts from their friends, but apparently, Nila, you don't, that's why, nothing else!
         </p>
 
         <div className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
