@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { AnimatePresence } from 'framer-motion';
+import { useState } from 'react';
 import { IntroScreen } from './components/IntroScreen';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
@@ -9,20 +10,11 @@ import { LetterSection } from './components/LetterSection';
 import { ThingsToSay } from './components/ThingsToSay';
 import { MemoryGallery } from './components/MemoryGallery';
 import { QuestionSection } from './components/QuestionSection';
-import { SecretSurprise } from './components/SecretSurprise';
 import { FinalSection } from './components/FinalSection';
 import { Footer } from './components/Footer';
 
 export function App() {
   const [showIntro, setShowIntro] = useState(true);
-  const [isSecretOpen, setIsSecretOpen] = useState(false);
-
-  const scrollToFinal = () => {
-    const section = document.getElementById('final-surprise');
-    if (section) {
-      section.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
 
   return (
     <div className="min-h-screen relative selection:bg-purple-500/30 selection:text-purple-200">
@@ -30,7 +22,7 @@ export function App() {
         {showIntro && <IntroScreen onComplete={() => setShowIntro(false)} />}
       </AnimatePresence>
 
-      <Navbar onOpenSecret={() => setIsSecretOpen(true)} />
+      <Navbar />
       
       <main>
         <Hero />
@@ -45,11 +37,6 @@ export function App() {
 
       <Footer />
 
-      <SecretSurprise 
-        isOpen={isSecretOpen} 
-        onClose={() => setIsSecretOpen(false)} 
-        onProceedToFinal={scrollToFinal}
-      />
     </div>
   );
 }

@@ -17,6 +17,7 @@ export const letterContent = {
     "So I decided to spend some time making this instead.",
     "There isn't some huge reason behind it.",
     "I just wanted to create something that might make you smile for a few minutes.",
+    "Because the developer heard from someone that your friends receive lots of gifts from their friends, but apparently, Nila, you don't, that's why!",
     "And if it did… then it was worth making."
   ],
   signoff: "From someone who thought you deserved a little something different."

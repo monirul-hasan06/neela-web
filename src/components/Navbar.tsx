@@ -1,11 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Sun, Moon, Compass, Gift } from 'lucide-react';
+import { Menu, X, Sun, Moon, Compass, Mail } from 'lucide-react';
 
-interface NavbarProps {
-  onOpenSecret: () => void;
-}
-
-export const Navbar: React.FC<NavbarProps> = ({ onOpenSecret }) => {
+export const Navbar: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(() => {
@@ -46,9 +42,9 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenSecret }) => {
   };
 
   const navLinks = [
-    { name: 'About', href: '#about' },
-    { name: 'Neela', href: '#neela' },
-    { name: 'Letter', href: '#letter' },
+    { name: 'About', href: '#about', special: false },
+    { name: 'Neela', href: '#neela', special: false },
+    { name: 'Letter', href: '#letter', special: true },
   ];
 
   return (
@@ -63,8 +59,15 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenSecret }) => {
 
         <div className="hidden md:flex items-center gap-8 text-sm">
           {navLinks.map((link) => (
-            <a key={link.name} href={link.href} className="hover:text-purple-500 dark:hover:text-purple-300 transition-colors">
-              {link.name}
+            <a
+              key={link.name}
+              href={link.href}
+              className={link.special
+                ? 'inline-flex items-center gap-2 rounded-full border border-pink-400/40 bg-pink-500/15 px-4 py-2 text-purple-700 dark:text-pink-200 shadow-sm shadow-pink-900/10 hover:bg-pink-500/25 hover:scale-[1.03] transition-all'
+                : 'hover:text-purple-500 dark:hover:text-purple-300 transition-colors'}
+            >
+              {link.special && <Mail className="w-4 h-4" />}
+              <span>{link.name}</span>
             </a>
           ))}
 
@@ -77,14 +80,6 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenSecret }) => {
             {isDarkMode ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
           </button>
 
-          <button 
-            onClick={onOpenSecret}
-            className="w-7 h-7 rounded-full bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-purple-600 dark:text-purple-400 hover:bg-purple-500/20 transition-all"
-            title="Secret"
-            aria-label="Open surprise"
-          >
-            <Gift className="w-4 h-4" />
-          </button>
         </div>
 
         <div className="flex items-center gap-3 md:hidden">
@@ -97,15 +92,6 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenSecret }) => {
             {isDarkMode ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
           </button>
 
-          <button 
-            onClick={onOpenSecret}
-            className="w-8 h-8 rounded-full bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-purple-600 dark:text-purple-400"
-            title="Secret"
-            aria-label="Open surprise"
-          >
-            <Gift className="w-4 h-4" />
-          </button>
-          
           <button 
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className="p-1 text-slate-700 dark:text-slate-200"
@@ -123,8 +109,11 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenSecret }) => {
               key={link.name} 
               href={link.href} 
               onClick={() => setMobileMenuOpen(false)}
-              className="text-lg font-serif py-1 border-b border-slate-200 dark:border-slate-800/60"
+              className={link.special
+                ? 'inline-flex items-center gap-2 rounded-xl border border-pink-400/40 bg-pink-500/15 px-4 py-3 text-lg font-serif text-purple-700 dark:text-pink-200'
+                : 'text-lg font-serif py-1 border-b border-slate-200 dark:border-slate-800/60'}
             >
+              {link.special && <Mail className="w-5 h-5" />}
               {link.name}
             </a>
           ))}
