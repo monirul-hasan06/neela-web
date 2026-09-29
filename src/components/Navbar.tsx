@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Sun, Moon, Compass } from 'lucide-react';
+import { Menu, X, Sun, Moon, Compass, Gift } from 'lucide-react';
 
 interface NavbarProps {
   onOpenSecret: () => void;
@@ -83,7 +83,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenSecret }) => {
             title="Secret"
             aria-label="Open surprise"
           >
-            ✦
+            <Gift className="w-4 h-4" />
           </button>
         </div>
 
@@ -103,7 +103,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenSecret }) => {
             title="Secret"
             aria-label="Open surprise"
           >
-            ✦
+            <Gift className="w-4 h-4" />
           </button>
           
           <button 
